@@ -2,21 +2,27 @@
 
 class ProjectController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-
 	public function getIndex()
 	{
-		return View::make('project');
+		$projects = Project::all();
+
+		return View::make(
+			'project'
+			, array(
+				'projects'	=> $projects
+			)
+		);
+	}
+
+	public function getView($Project_id)
+	{
+		$project = Project::with('tasks')->find($Project_id);
+
+		return View::make(
+			'project_view'
+			, array(
+				'project'	=> $project
+			)
+		);
 	}
 }

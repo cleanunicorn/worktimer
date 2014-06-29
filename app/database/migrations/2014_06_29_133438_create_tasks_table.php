@@ -18,8 +18,11 @@ class CreateTasksTable extends Migration {
 			$table->increments('id');
 
 			$table->string('name');
-			$table->string('assiged_user');
+			$table->string('assigned_user');
 			$table->string('deadline');
+
+			$table->datetime('updated_at');
+			$table->datetime('created_at');
 
 			$table->bigInteger('project_id');
 		});

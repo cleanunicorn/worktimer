@@ -22,6 +22,9 @@ class CreateTimersTable extends Migration {
 			$table->dateTime('start');
 			$table->dateTime('end');
 
+			$table->datetime('updated_at');
+			$table->datetime('created_at');
+
 			$table->bigInteger('task_id');
 		});
 	}

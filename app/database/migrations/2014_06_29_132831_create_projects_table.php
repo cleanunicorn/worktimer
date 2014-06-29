@@ -21,6 +21,9 @@ class CreateProjectsTable extends Migration {
 			$table->string('description');
 			$table->string('client');
 			$table->string('equipment');
+
+			$table->datetime('updated_at');
+			$table->datetime('created_at');
 		});
 	}
 

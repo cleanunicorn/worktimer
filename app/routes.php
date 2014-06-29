@@ -19,3 +19,4 @@ Route::get('/', function()
 Route::controller('/home', 'HomeController');
 Route::controller('/project', 'ProjectController');
 Route::controller('/task', 'TaskController');
+Route::controller('/timer', 'TimerController');
